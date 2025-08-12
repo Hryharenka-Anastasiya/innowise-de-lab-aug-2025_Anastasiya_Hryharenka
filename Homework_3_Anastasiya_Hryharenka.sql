@@ -91,6 +91,7 @@ where status = 'Delivered'
 group by full_name, country
 having count(*) >= 2;
 
+
 --7.1 - version with cte and window functions
 with 
 customer_orders as 
