@@ -24,8 +24,8 @@ select
  	last_name, 
   	item, 
  	amount 
-from customers
-left join orders
+from orders
+left join customers
 on customers.customer_id = orders.customer_id; 
 
 
@@ -36,7 +36,7 @@ select
   	last_name 
 from shippings
 left join customers
-on shippings.customer_id = customers.customer_id;
+on shippings.customer = customers.customer_id;
 
 
 --3.1
@@ -45,7 +45,7 @@ group by country
 
 
 --3.2
-select item, count(*), avg(amount) as avg_amount from orders
+select item, count(*), round(avg(amount), 2) as avg_amount from orders
 group by item;
 
 
@@ -86,7 +86,7 @@ from orders
 join customers
 on orders.customer_id = customers.customer_id
 join shippings
-on shippings.customer_id = customers.customer_id
+on shippings.customer = customers.customer_id
 where status = 'Delivered'
 group by full_name, country
 having count(*) >= 2;
@@ -109,6 +109,6 @@ customer_orders as
 select distinct full_name, country, total_orders, total_amount 
 from customer_orders
 join shippings
-on shippings.customer_id = customer_orders.customer_id 
+on shippings.customer = customer_orders.customer_id 
 where status = 'Delivered' and total_orders>=2;
 
