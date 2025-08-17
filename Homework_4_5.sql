@@ -19,8 +19,7 @@ $$;
 --2. Использовать эту функцию в операторе SELECT, чтобы увидеть 
 -- потенциальный бонус для каждого сотрудника. 
 SELECT CalculateAnnualBonus(employeeid, salary)
-FROM employees
-WHERE employeeid = 3;
+FROM employees;
 
 
 -- 3. Представление (View): Создать представление с именем 
