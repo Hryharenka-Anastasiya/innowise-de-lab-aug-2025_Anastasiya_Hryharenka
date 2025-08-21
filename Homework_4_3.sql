@@ -2,8 +2,8 @@
 -- Задание 3: DCL 
 
 -- 1. Создать нового пользователя PostgreSQL (роль) с именем hr_user и простым паролем. 
-GRANT USAGE ON SCHEMA laba4 TO hr_user;
 CREATE ROLE hr_user WITH LOGIN PASSWORD 'hr2025';
+GRANT USAGE ON SCHEMA laba4 TO hr_user;
 
 -- 2. Предоставить hr_user право SELECT на таблицу Employees. 
 GRANT SELECT ON TABLE laba4.employees TO hr_user;

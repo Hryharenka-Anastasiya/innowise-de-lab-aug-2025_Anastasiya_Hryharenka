@@ -28,7 +28,7 @@ FROM employees;
 CREATE OR REPLACE VIEW IT_Department_View AS
 SELECT employeeid, firstname, lastname, salary
 FROM employees
-WHERE department LIKE '%IT';
+WHERE department = 'IT';
 
 
 -- 4. Выбрать данные из вашего представления IT_Department_View. 

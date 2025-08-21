@@ -20,7 +20,7 @@ WHERE projectid IN (
     SELECT DISTINCT employeeprojects.projectid
     FROM employeeprojects
     JOIN employees ON employeeprojects.employeeid = employees.employeeid
-    WHERE employees.department LIKE '%IT'
+    WHERE employees.department = 'IT'
 );
 
 -- Проверка
@@ -29,7 +29,7 @@ JOIN employeeprojects
 ON projects.projectid = employeeprojects.projectid
 JOIN employees
 ON employeeprojects.employeeid = employees.employeeid
-WHERE employees.department LIKE '%IT'
+WHERE employees.department = 'IT'
 
 
 -- 3. Для любого проекта, у которого еще нет EndDate (EndDate IS NULL), 
