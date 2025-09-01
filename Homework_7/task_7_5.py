@@ -6,7 +6,8 @@ try:
     
     for i in range(height):
         for j in range(width):
-            print("*")
+            print("*", end="")
+        print()
     
 except ValueError:
     print("Нужно вводить число, а не текст!")
